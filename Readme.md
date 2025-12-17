@@ -19,4 +19,4 @@ I followed [this](https://ruhyadi.github.io/blog/mlflow-docker/) tutorial by Did
    source .venv/bin/activate
    python src/pipeline.py
    ```
-4. Enjoy mlflow at `http://localhost:5001`, find you model there & follow the training cycle & metrics!
+4. Enjoy mlflow at `http://localhost:5001`, find your model there & follow the training cycle & metrics!
