@@ -1,0 +1,23 @@
+[project]
+name = "mlflow-template"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3>=1.42.11",
+    "dotenv>=0.9.9",
+    "mlflow>=3.7.0",
+    "numpy>=2.3.5",
+    "optuna>=4.6.0",
+    "pandas>=2.3.3",
+    "pathlib>=1.0.1",
+    "polars>=1.36.1",
+    "psycopg2-binary>=2.9.11",
+    "xgboost>=3.1.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.9",
+]
