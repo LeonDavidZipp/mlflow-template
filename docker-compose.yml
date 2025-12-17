@@ -1,20 +1,4 @@
 services:
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: mydatabase
-    volumes:
-      - db_data:/var/lib/postgresql/data
-      - ./data/AAAU.csv:/tmp/AAAU.csv
-      - ./data/bitcoin_transformed.csv:/tmp/bitcoin_transformed.csv
-      - ./data/dirtydata.csv:/tmp/dirtydata.csv
-      - ./data/salaries.csv:/tmp/salaries.csv
-      - ./data/customers.csv:/tmp/customers.csv
-    ports:
-      - "5432:5432"
-
   mlflow:
     build:
       context: .
