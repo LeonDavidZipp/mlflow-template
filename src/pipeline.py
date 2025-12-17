@@ -13,7 +13,8 @@ from sklearn.metrics import r2_score
 from sklearn.utils import shuffle  # type: ignore
 from xgboost import XGBRegressor
 
-load_dotenv(Path(__file__).parent.parent / ".env.example")
+root_dir = Path(__file__).parent.parent
+load_dotenv(root_dir / ".env.example")
 
 os.environ["MLFLOW_S3_ENDPOINT_URL"] = os.getenv(
 	"MLFLOW_S3_ENDPOINT_URL", "http://localhost:9000"
@@ -284,8 +285,7 @@ def find_best_model_feature_combo(
 
 
 if __name__ == "__main__":
-	lf = pl.scan_csv("./data/laptop_battery_health_usage.csv", separator=",")
-	print(lf.collect_schema())
+	lf = pl.scan_csv(root_dir / "data/laptop_battery_health_usage.csv", separator=",")
 	best_model, best_score, best_features = find_best_model_feature_combo(lf)
 	print(f"\nFinal Best R² score: {best_score:.4f}")
 	print(f"Number of features: {len(best_features)}")
